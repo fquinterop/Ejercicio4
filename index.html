@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recipe Box - Ejemplo4</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <header class="bg-white shadow">
+      <div class="max-w-6xl mx-auto px-4 py-6 flex items-center justify-between">
+        <h1 class="text-2xl font-semibold">Recipe Box</h1>
+        <p class="text-sm text-gray-500">Guarda y comparte tus recetas (MockAPI)</p>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <section class="lg:col-span-2">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-xl font-semibold">Recetas</h2>
+            <div>
+              <input id="search" placeholder="Buscar receta..." class="border rounded px-2 py-1" />
+            </div>
+          </div>
+          <div id="recipes" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+        </section>
+
+        <aside class="bg-white p-4 rounded shadow">
+          <h3 id="formTitle" class="font-semibold mb-2">Nueva receta</h3>
+          <form id="recipeForm" class="space-y-2">
+            <input type="hidden" id="rId" />
+            <label class="block">
+              <span class="text-sm">Título</span>
+              <input id="rTitle" class="w-full border rounded px-2 py-1" placeholder="Nombre de la receta" required />
+            </label>
+            <label class="block">
+              <span class="text-sm">Imagen (URL)</span>
+              <input id="rImg" class="w-full border rounded px-2 py-1" placeholder="https://..." />
+            </label>
+            <label class="block">
+              <span class="text-sm">Ingredientes (una por línea)</span>
+              <textarea id="rIngredients" class="w-full border rounded px-2 py-1" rows="4"></textarea>
+            </label>
+            <label class="block">
+              <span class="text-sm">Preparación</span>
+              <textarea id="rSteps" class="w-full border rounded px-2 py-1" rows="4"></textarea>
+            </label>
+            <div class="flex items-center gap-2">
+              <label class="inline-flex items-center">
+                <input id="rFav" type="checkbox" class="form-checkbox" />
+                <span class="ml-2 text-sm">Favorita</span>
+              </label>
+            </div>
+            <div class="flex items-center gap-2">
+              <button id="submitBtn" type="submit" class="bg-indigo-600 text-white px-3 py-1 rounded">Guardar</button>
+              <button id="cancelBtn" type="button" class="bg-gray-200 px-3 py-1 rounded hidden">Cancelar</button>
+              <span id="formMsg" class="ml-2 text-sm text-gray-600"></span>
+            </div>
+          </form>
+        </aside>
+      </div>
+    </main>
+
+    <template id="recipeTpl">
+      <div class="bg-white rounded shadow p-3 flex flex-col">
+        <div class="h-40 bg-gray-100 rounded overflow-hidden flex items-center justify-center">
+          <img class="object-cover w-full h-full" src="" alt="" />
+        </div>
+        <h4 class="mt-3 font-semibold recipe-title">Título</h4>
+        <div class="flex items-center justify-between mt-2">
+          <div class="text-sm text-gray-600 recipe-count">Ingredientes: 0</div>
+          <div class="flex items-center gap-2">
+            <button class="favBtn text-yellow-500">☆</button>
+            <button class="editBtn bg-yellow-500 text-white px-2 py-1 rounded">Editar</button>
+            <button class="deleteBtn bg-red-500 text-white px-2 py-1 rounded">Borrar</button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
