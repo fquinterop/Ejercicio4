@@ -1,7 +1,7 @@
 // Recipe Box - Ejemplo4
 // Configura tu endpoint MockAPI para 'recipes'
 // Ej: https://<tu-subdominio>.mockapi.io/api/v1/recipes
-const MOCKAPI_RECIPES_URL = 'https://68f1512ab36f9750dee9068f.mockapi.io/:endpoint';
+const MOCKAPI_RECIPES_URL = 'https://68f1512ab36f9750dee9068f.mockapi.io/Tarta_Manzana';
 
 let recipes = [];
 
