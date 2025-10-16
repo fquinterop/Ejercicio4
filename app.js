@@ -1,7 +1,7 @@
 // Recipe Box - Ejemplo4
 // Configura tu endpoint MockAPI para 'recipes'
 // Ej: https://<tu-subdominio>.mockapi.io/api/v1/recipes
-const MOCKAPI_RECIPES_URL = 'https://68f0fc5f0b966ad50034f6c6.mockapi.io/:endpoint';
+const MOCKAPI_RECIPES_URL = 'https://68f1512ab36f9750dee9068f.mockapi.io/:endpoint';
 
 let recipes = [];
 
@@ -140,14 +140,5 @@ document.getElementById('search').addEventListener('input', (e) => renderRecipes
 
 loadRecipes();
 
-
-{
-  id: 1;
-  title: "Tarta de manzana",
-  img: "https://images.unsplash.com/photo-1512058564366-c9e3a0b1e7f1";
-  "ingredients": ["Manzanas", "Harina", "Azúcar"],
-  "steps": "Mezclar y hornear.",
-  "fav": false
-}
 
 });
